@@ -13,16 +13,18 @@ use App\Models\Opinion;
 @extends('layouts.backend')
 
 @section('content')
-	<?= Form::model($opinion, ['url' => route('create-opinion')]) ?>
+	<?= Form::model($opinion, ['url' => route('create-opinion'), 'class' => 'form-group']) ?>
 		<?= Form::label($opinion::ATTR_TEXT, 'Текст') ?>
-		<?= Form::textarea($opinion::ATTR_TEXT) ?>
+		<?= Form::textarea($opinion::ATTR_TEXT, '', ['class' => 'form-control']) ?>
 
 		<?= Form::label($opinion::ATTR_APPEAL, 'Имя автора') ?>
-		<?= Form::text($opinion::ATTR_APPEAL) ?>
+		<?= Form::text($opinion::ATTR_APPEAL, '', ['class' => 'form-control']) ?>
 
 		<?= Form::label($opinion::ATTR_IS_PUBLISHED, 'Опубликован') ?>
 		<?= Form::checkbox($opinion::ATTR_IS_PUBLISHED) ?>
 
-		<?= Form::submit('Создать') ?>
+	<br>
+
+		<?= Form::submit('Создать', ['class' => 'btn btn-primary']) ?>
 	<?= Form::close() ?>
 @endsection

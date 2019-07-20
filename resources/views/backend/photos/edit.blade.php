@@ -13,14 +13,14 @@
 @extends('layouts.backend')
 
 @section('content')
-	{{ Form::model($photo, ['url' => route('update-photo')]) }}
+	{{ Form::model($photo, ['url' => route('update-photo'), 'class' => 'form-group']) }}
 	{{ Form::hidden($photo::ATTR_ID, $photo->id) }}
 
-	{{ Form::label($photo::ATTR_TITLE, 'Заголоаок') }}
-	{{ Form::text($photo::ATTR_TITLE) }}
+	{{ Form::label($photo::ATTR_TITLE, 'Заголовок') }}
+	{{ Form::text($photo::ATTR_TITLE, null, ['class' => 'form-control']) }}
 
 	@include('widgets.image-input');
 
-	{{ Form::submit('Сохранить') }}
+	{{ Form::submit('Сохранить', ['class' => 'btn btn-submit']) }}
 	{{ Form::close() }}
 @endsection

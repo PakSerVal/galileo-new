@@ -13,12 +13,12 @@ use App\Models\Photo;
 @extends('layouts.backend')
 
 @section('content')
-	<?= Form::model($photo, ['url' => route('create-photo')]) ?>
+	<?= Form::model($photo, ['url' => route('create-photo'), 'class' => 'form-group']) ?>
 		<?= Form::label($photo::ATTR_TITLE, 'Название') ?>
-		<?= Form::text($photo::ATTR_TITLE) ?>
+		<?= Form::text($photo::ATTR_TITLE, '', ['class' => 'form-control']) ?>
 
 		@include('widgets.image-input');
 
-		<?= Form::submit('Создать') ?>
+		<?= Form::submit('Создать', ['class' => 'btn btn-submit']) ?>
 	<?= Form::close() ?>
 @endsection

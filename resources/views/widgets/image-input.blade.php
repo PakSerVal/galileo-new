@@ -9,7 +9,7 @@
 	$isNeedSelectBtn = true;
 ?>
 
-<div class="image-selector">
+<div class="image-selector" style="max-width: 500px; border:  1px solid grey; padding: 20px; margin: 10px 0">
 	<input type="hidden" name="image_id" class="form-control" data-role="image-id-input">
 
 	@if($isNeedSelectBtn)

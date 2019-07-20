@@ -15,18 +15,18 @@ use App\Models\Course;
 @extends('layouts.backend')
 
 @section('content')
-	<?= Form::model($course, ['action' => CourseController::getActionUrl(CourseController::ACTION_CREATE)]) ?>
+	<?= Form::model($course, ['action' => CourseController::getActionUrl(CourseController::ACTION_CREATE)], ['class' => 'form-group']) ?>
 		<?= Form::label($course::ATTR_TITLE, 'Заголовок') ?>
-		<?= Form::text($course::ATTR_TITLE, '') ?>
+		<?= Form::text($course::ATTR_TITLE, '', ['class' => 'form-control']) ?>
 
 		<?= Form::label($course::ATTR_DESCRIPTION, 'Описание') ?>
-		<?= Form::textarea($course::ATTR_DESCRIPTION, '') ?>
+		<?= Form::textarea($course::ATTR_DESCRIPTION, '', ['class' => 'form-control']) ?>
 
 		<?= Form::label($course::ATTR_VIEW_PATH, 'Шаблон') ?>
-		<?= Form::select($course::ATTR_VIEW_PATH, $viewPathVariants) ?>
+		<?= Form::select($course::ATTR_VIEW_PATH, $viewPathVariants, null, ['class' => 'form-control']) ?>
 
-		@include('widgets.image-input');
+		@include('widgets.image-input')
 
-		<?= Form::submit('Создать') ?>
+		<?= Form::submit('Создать', ['class' => 'btn btn-primary']) ?>
 	<?= Form::close() ?>
 @endsection
