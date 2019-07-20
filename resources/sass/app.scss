@@ -1,0 +1,49 @@
+// Fonts
+//@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap');
+
+// Variables
+@import 'variables';
+
+// Variables
+@import 'mixins';
+
+// Bootstrap
+//@import '~bootstrap/scss/bootstrap';
+
+// Courses
+@import "courses/courses";
+
+body {
+	font-family: 'Cormorant Garamond', serif !important;
+	color: #808080;
+	font-size: 16px;
+
+	.headline {
+		font-family: 'Cormorant Garamond', serif !important;
+		font-weight: bold;
+	}
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #808080 !important;
+	text-decoration: none;
+	transition-duration: .3s;
+	transition-property: color;
+
+	&:hover, &:focus {
+		color: #dba4a4 !important;;
+		text-decoration: none;
+	}
+}
+
+.application {
+	font-family: 'Cormorant Garamond', serif !important;
+	color: #808080 !important;
+}
