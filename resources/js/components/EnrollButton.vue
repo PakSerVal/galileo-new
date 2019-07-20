@@ -19,7 +19,8 @@
 				</h1>
 				<div v-else>
 					<v-card-text>
-						Оставьте нам свои данные и мы свяжемся с вами
+						Позвоните нам по телефону: <span class="dedicated-text">+ 7 (924) 122-61-10</span>
+						или оставьте нам свои данные и в ближайшее время мы с Вами свяжемся
 					</v-card-text>
 					<v-divider></v-divider>
 					<v-form v-model="isValid">

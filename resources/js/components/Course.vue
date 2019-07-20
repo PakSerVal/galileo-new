@@ -1,12 +1,17 @@
 <template>
-	<div class="selected-course" v-html="course.content"></div>
+	<div>
+		<div class="selected-course" v-html="course.content"></div>
+		<EnrollButton/>
+	</div>
 </template>
 
 <script>
 	import {GET_COURSE} from "../store/actions-enum";
+	import EnrollButton from "./EnrollButton";
 
 	export default {
 		name: "Course",
+		components: {EnrollButton},
 		data() {
 			return {
 				course: {},

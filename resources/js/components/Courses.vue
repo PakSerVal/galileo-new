@@ -58,7 +58,7 @@
 		&__title {
 			width: 100%;
 			text-align: center;
-			margin: 30px 0;
+			margin: 15px 0;
 		}
 
 		&__wrap {
@@ -70,7 +70,7 @@
 
 		&__item {
 			width: 300px;
-			margin: 0 20px;
+			margin: 10px 20px 0;
 			cursor: pointer;
 
 			&:hover {
