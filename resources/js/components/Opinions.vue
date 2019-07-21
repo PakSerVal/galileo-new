@@ -9,14 +9,17 @@
 				<div class="opinion__quotes"><img src="/img/galileo/two-quotes.png" alt="quote"></div>
 			</div>
 		</div>
+		<AddOpinionForm/>
 	</div>
 </template>
 
 <script>
 	import {GET_OPINIONS} from "../store/actions-enum";
+	import AddOpinionForm from "./AddOpinionForm";
 
 	export default {
 		name: "Opinions",
+		components: {AddOpinionForm},
 		data() {
 			return {
 				opinions: [],

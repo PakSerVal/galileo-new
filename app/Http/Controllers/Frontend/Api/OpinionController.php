@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Frontend\Api;
 
+use App\Dto\OpinionDTO;
+use App\Http\Controllers\Frontend\Api\Requests\SaveOpinionRequest;
 use App\Http\Controllers\Frontend\Api\Responses\ApiResponseConverter;
 use App\Http\Controllers\Frontend\Api\Responses\Opinion\GetOpinionsResponse;
 use App\Repositories\OpinionRepository;
@@ -14,6 +16,7 @@ use Illuminate\Http\JsonResponse;
  */
 class OpinionController extends ApiController {
 	const ACTION_GET_OPINIONS = 'getOpinions';
+	const ACTION_SAVE_OPINION = 'saveOpinion';
 
 	/** @var OpinionRepository Репозиторий отзывов */
 	private $opinions;
@@ -44,5 +47,21 @@ class OpinionController extends ApiController {
 		$response = $this->converter->convert($opinions, GetOpinionsResponse::class);
 
 		return $this->respond($response);
+	}
+
+	/**
+	 * Сохранение отзыва.
+	 *
+	 * @param SaveOpinionRequest $request
+	 *
+	 * @author Pak Sergey
+	 */
+	public function saveOpinion(SaveOpinionRequest $request) {
+		$opinion              = new OpinionDTO();
+		$opinion->text        = $request->content;
+		$opinion->appeal      = $request->name;
+		$opinion->isPublished = false;
+
+		$this->opinions->save($opinion);
 	}
 }

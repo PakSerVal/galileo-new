@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend\Api;
 
-use App\http\controllers\admin\requests\EnrollRequest;
+use App\Http\Controllers\Frontend\Api\Requests\EnrollRequest;
 use App\Models\Enrollment;
 
 /**

@@ -8,5 +8,5 @@ export const Url = {
 
 	sendEnrollForm: '/api/send-enroll-form',
 
-	login: '/login',
+	sendOpinion: '/api/save-opinion',
 };

@@ -69,4 +69,22 @@ class OpinionRepository {
 
 		return $result;
 	}
+
+	/**
+	 * Сохрнение отзыва.
+	 *
+	 * @param OpinionDTO $opinionDTO
+	 *
+	 * @return bool
+	 *
+	 * @author Pak Sergey
+	 */
+	public function save(OpinionDTO $opinionDTO): bool {
+		$opinion               = new Opinion();
+		$opinion->text         = $opinionDTO->text;
+		$opinion->appeal       = $opinionDTO->appeal;
+		$opinion->is_published = $opinionDTO->isPublished;
+
+		return $opinion->save();
+	}
 }

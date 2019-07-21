@@ -53,14 +53,14 @@ export const ApiService = {
 	},
 
 	/**
-	 * Аутентификация.
+	 * Отправка отзыва.
 	 *
-	 * @param email
-	 * @param password
+	 * @param {string} name    Имя
+	 * @param {string} content Контент
 	 *
-	 * @return AxiosPromise<T>
+	 * @author Pak Sergey
 	 */
-	login(email, password) {
-		return axios.post(Url.login, {email, password});
-	},
+	sendOpinion(name, content) {
+		return axios.post(Url.sendOpinion, {name, content});
+	}
 };

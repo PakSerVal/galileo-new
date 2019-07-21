@@ -22,4 +22,5 @@ Route::get('/get-course/{id}', CourseController::getActionUrl(CourseController::
 Route::get('/get-opinions', OpinionController::getActionUrl(OpinionController::ACTION_GET_OPINIONS));
 Route::get('/get-photo', PhotoController::getActionUrl(PhotoController::ACTION_GET_PHOTOS));
 Route::post('/send-enroll-form', EnrollController::getActionUrl(EnrollController::ACTION_ENROLL));
+Route::post('/save-opinion', OpinionController::getActionUrl(OpinionController::ACTION_SAVE_OPINION));
 
