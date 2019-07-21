@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 Route::get('/t-login', LoginController::getActionUrl(LoginController::ACTION_LOGIN_FORM));
-Route::post('/t-login', LoginController::getActionUrl(LoginController::ACTION_LOGIN));
+Route::post('/t-login', LoginController::getActionUrl(LoginController::ACTION_LOGIN))->name('login');
 
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 't-admin'], function () {
 	Route::get('/', MenuController::getActionUrl(MenuController::ACTION_INDEX));
