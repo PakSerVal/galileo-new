@@ -19,7 +19,7 @@
 	{{ Form::label($photo::ATTR_TITLE, 'Заголовок') }}
 	{{ Form::text($photo::ATTR_TITLE, null, ['class' => 'form-control']) }}
 
-	@include('widgets.image-input');
+	@include('widgets.image-input', ['previewSrc' => $photo->image->getUrl()]);
 
 	{{ Form::submit('Сохранить', ['class' => 'btn btn-submit']) }}
 	{{ Form::close() }}

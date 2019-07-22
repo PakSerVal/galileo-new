@@ -26,7 +26,7 @@ Route::get('/t-login', LoginController::getActionUrl(LoginController::ACTION_LOG
 Route::post('/t-login', LoginController::getActionUrl(LoginController::ACTION_LOGIN))->name('login');
 
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 't-admin'], function () {
-	Route::get('/', MenuController::getActionUrl(MenuController::ACTION_INDEX));
+	Route::get('/', MenuController::getActionUrl(MenuController::ACTION_INDEX))->name('admin-menu');
 
 	Route::get('/courses', CourseController::getActionUrl(CourseController::ACTION_INDEX))->name('courses-list');
 	Route::get('/courses/create', CourseController::getActionUrl(CourseController::ACTION_SHOW_CREATE_FORM));

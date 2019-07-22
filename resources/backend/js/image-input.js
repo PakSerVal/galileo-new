@@ -1,7 +1,8 @@
 (function() {
-	const INPUT_SELECTOR         = '[data-role="image-id-input"]';
-	const SELECT_IMAGE_SELECTOR  = '[data-role="select-image"]';
-	const IMAGE_PREVIEW_SELECTOR = '.image-preview';
+	const INPUT_SELECTOR               = '[data-role="image-id-input"]';
+	const SELECT_IMAGE_SELECTOR        = '[data-role="select-image"]';
+	const IMAGE_PREVIEW_SELECTOR       = '.image-preview';
+	const IMAGE_UPLOAD_BUTTON_SELECTOR = '[data-role="image-upload-button"]';
 
 	$(function() {
 		const $input      = $(INPUT_SELECTOR);
@@ -52,6 +53,7 @@
 								$(inputRadio).on('change', () => {
 									$input.val(image.id);
 									$preview.attr('src', image.src);
+									$preview.removeClass('d-none');
 								});
 
 								imagesBlock.appendChild(imageDiv);
@@ -68,6 +70,10 @@
 			updateImages(currentPage);
 		});
 
+		$(IMAGE_UPLOAD_BUTTON_SELECTOR).on('click', function() {
+			$('#image-upload-input').trigger('click');
+		});
+
 		$('#image-upload-input').on('change', function() {
 			const form  = new FormData();
 			form.append('image', this.files[0]);
@@ -80,6 +86,7 @@
 					const image = response;
 					$input.val(image.id);
 					$preview.attr('src', image.src);
+					$preview.removeClass('d-none');
 				},
 				cache: false,
 				contentType: false,

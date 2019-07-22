@@ -3,7 +3,7 @@
 	use App\Http\Controllers\Backend\CourseController;
 	use App\Models\Course;
 
-/**
+	/**
 	 * Редактирование курса
 	 *
 	 * @var Course   $course           Курс
@@ -27,8 +27,8 @@
 	<?= Form::label($course::ATTR_VIEW_PATH, 'Шаблон') ?>
 	<?= Form::select($course::ATTR_VIEW_PATH, $viewPathVariants, null, ['class' => 'form-control']) ?>
 
-	@include('widgets.image-input');
+	@include('widgets.image-input', ['previewSrc' => $course->image->getUrl()]);
 
-	<?= Form::submit('Создать', ['class' => 'btn btn-primary']) ?>
+	<?= Form::submit('Сохранить', ['class' => 'btn btn-primary']) ?>
 	<?= Form::close() ?>
 @endsection

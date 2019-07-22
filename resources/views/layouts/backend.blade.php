@@ -27,10 +27,9 @@
 	<link href="{{ mix('css/backend.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-	<main class="py-4">
-		@yield('content')
-	</main>
-</div>
+<nav class="navbar navbar-light bg-light">
+	<a class="navbar-brand" href="{{route('admin-menu')}}">Galileo</a>
+</nav>
+@yield('content')
 </body>
 </html>
