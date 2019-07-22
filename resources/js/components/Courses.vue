@@ -4,17 +4,17 @@
 		<div class="courses__wrap">
 			<div class="courses__item" v-for="(course, i) in courses" :key="i">
 				<v-card v-on:click="() => onCourseSelect(course)">
-					<v-img :src="course.image" height="100%">
+					<v-img :src="course.image" height="auto">
 					</v-img>
 
-					<v-card-title primary-title>
+					<v-card-title primary-title class="courses__item-title">
 						<div>
 							<div class="headline">{{ course.title }}</div>
 							<span class="grey--text">{{ course.description }}</span>
 						</div>
 					</v-card-title>
 
-					<v-card-actions>
+					<v-card-actions class="courses__item-buttons">
 						<v-btn flat color="purple" v-on:click="() => onCourseSelect(course)">Подробнее</v-btn>
 					</v-card-actions>
 				</v-card>
@@ -72,6 +72,20 @@
 			width: 300px;
 			margin: 10px 20px 0;
 			cursor: pointer;
+			height: auto;
+
+			& > div {
+				height: 100%;
+			}
+
+			&-title {
+				margin-bottom: 52px;
+			}
+
+			&-buttons {
+				position: absolute;
+				top: calc(100% - 52px);
+			}
 
 			&:hover {
 				-webkit-box-shadow: 0 4px 31px -2px rgba(0,0,0,0.66);

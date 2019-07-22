@@ -699,7 +699,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".courses__title[data-v-58d49dc6] {\n  width: 100%;\n  text-align: center;\n  margin: 15px 0;\n}\n.courses__wrap[data-v-58d49dc6] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  flex-wrap: wrap;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.courses__item[data-v-58d49dc6] {\n  width: 300px;\n  margin: 10px 20px 0;\n  cursor: pointer;\n}\n.courses__item[data-v-58d49dc6]:hover {\n  box-shadow: 0 4px 31px -2px rgba(0, 0, 0, 0.66);\n  -webkit-transition: box-shadow 0.3s ease-in-out;\n  transition: box-shadow 0.3s ease-in-out;\n}\n.courses__enroll-btn[data-v-58d49dc6] {\n  margin-top: 20px;\n}", ""]);
+exports.push([module.i, ".courses__title[data-v-58d49dc6] {\n  width: 100%;\n  text-align: center;\n  margin: 15px 0;\n}\n.courses__wrap[data-v-58d49dc6] {\n  width: 100%;\n  display: -webkit-box;\n  display: flex;\n  flex-wrap: wrap;\n  -webkit-box-pack: center;\n          justify-content: center;\n}\n.courses__item[data-v-58d49dc6] {\n  width: 300px;\n  margin: 10px 20px 0;\n  cursor: pointer;\n  height: auto;\n}\n.courses__item > div[data-v-58d49dc6] {\n  height: 100%;\n}\n.courses__item-title[data-v-58d49dc6] {\n  margin-bottom: 52px;\n}\n.courses__item-buttons[data-v-58d49dc6] {\n  position: absolute;\n  top: calc(100% - 52px);\n}\n.courses__item[data-v-58d49dc6]:hover {\n  box-shadow: 0 4px 31px -2px rgba(0, 0, 0, 0.66);\n  -webkit-transition: box-shadow 0.3s ease-in-out;\n  transition: box-shadow 0.3s ease-in-out;\n}\n.courses__enroll-btn[data-v-58d49dc6] {\n  margin-top: 20px;\n}", ""]);
 
 // exports
 
@@ -1560,22 +1560,30 @@ var render = function() {
                 }
               },
               [
-                _c("v-img", { attrs: { src: course.image, height: "100%" } }),
+                _c("v-img", { attrs: { src: course.image, height: "auto" } }),
                 _vm._v(" "),
-                _c("v-card-title", { attrs: { "primary-title": "" } }, [
-                  _c("div", [
-                    _c("div", { staticClass: "headline" }, [
-                      _vm._v(_vm._s(course.title))
-                    ]),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "grey--text" }, [
-                      _vm._v(_vm._s(course.description))
+                _c(
+                  "v-card-title",
+                  {
+                    staticClass: "courses__item-title",
+                    attrs: { "primary-title": "" }
+                  },
+                  [
+                    _c("div", [
+                      _c("div", { staticClass: "headline" }, [
+                        _vm._v(_vm._s(course.title))
+                      ]),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "grey--text" }, [
+                        _vm._v(_vm._s(course.description))
+                      ])
                     ])
-                  ])
-                ]),
+                  ]
+                ),
                 _vm._v(" "),
                 _c(
                   "v-card-actions",
+                  { staticClass: "courses__item-buttons" },
                   [
                     _c(
                       "v-btn",
