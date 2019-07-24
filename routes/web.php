@@ -54,4 +54,5 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 't-admin'], functio
 	Route::post('/images/upload', ImageController::getActionUrl(ImageController::ACTION_UPLOAD))->name('image-upload');
 
 	Route::get('/enrollments', EnrollmentController::getActionUrl(EnrollmentController::ACTION_INDEX))->name('enrollments-list');
+	Route::get('/enrollments/delete/{id}', EnrollmentController::getActionUrl(EnrollmentController::ACTION_DELETE))->name('delete-enrollment');
 });

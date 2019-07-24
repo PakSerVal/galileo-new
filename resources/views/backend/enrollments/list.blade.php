@@ -17,6 +17,7 @@
 			<th scope="col">id</th>
 			<th scope="col">Имя</th>
 			<th scope="col">Телефон</th>
+			<th scope="col">Действия</th>
 		</tr>
 		</thead>
 		<tbody>
@@ -25,6 +26,17 @@
 				<th scope="row">{{ $enrollment->id }}</th>
 				<td>{{ $enrollment->name}}</td>
 				<td>{{ $enrollment->phone }}</td>
+				<td>
+					<form id="{{$enrollment->id}}" class="delete" action="{{ route('delete-enrollment', ['id' => $enrollment->id]) }}" method="GET">
+						{{ csrf_field() }}
+						<button type="submit" class="btn btn-danger">Удалить</button>
+					</form>
+					<script>
+						$("#{{$enrollment->id}}").on("submit", function(){
+							return confirm("Удалить запись?");
+						});
+					</script>
+				</td>
 			</tr
 		@endforeach>
 		</tbody>
