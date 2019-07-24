@@ -25,6 +25,8 @@ class EnrollController extends ApiController {
 		$enrollment->name  = $request->name;
 		$enrollment->phone = $request->phone;
 
+		mail("galileo.center.artem@gmail.com", "Запись на курсы", "Имя: $request->name, Телефон: $request->phone");
+
 		$enrollment->save();
 	}
 }
