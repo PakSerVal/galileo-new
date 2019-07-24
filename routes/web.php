@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Backend\CourseController;
+use App\Http\Controllers\Backend\EnrollmentController;
 use App\Http\Controllers\Backend\ImageController;
 use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\OpinionController;
@@ -51,4 +52,6 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 't-admin'], functio
 
 	Route::get('/images/get-all', ImageController::getActionUrl(ImageController::ACTION_GET_ALL))->name('images-get');
 	Route::post('/images/upload', ImageController::getActionUrl(ImageController::ACTION_UPLOAD))->name('image-upload');
+
+	Route::get('/enrollments', EnrollmentController::getActionUrl(EnrollmentController::ACTION_INDEX))->name('enrollments-list');
 });

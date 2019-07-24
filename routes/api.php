@@ -4,7 +4,6 @@ use App\Http\Controllers\Frontend\Api\CourseController;
 use App\Http\Controllers\Frontend\Api\EnrollController;
 use App\Http\Controllers\Frontend\Api\OpinionController;
 use App\Http\Controllers\Frontend\Api\PhotoController;
-use App\Http\Controllers\Frontend\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +22,3 @@ Route::get('/get-opinions', OpinionController::getActionUrl(OpinionController::A
 Route::get('/get-photo', PhotoController::getActionUrl(PhotoController::ACTION_GET_PHOTOS));
 Route::post('/send-enroll-form', EnrollController::getActionUrl(EnrollController::ACTION_ENROLL));
 Route::post('/save-opinion', OpinionController::getActionUrl(OpinionController::ACTION_SAVE_OPINION));
-

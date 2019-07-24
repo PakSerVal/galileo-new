@@ -3,7 +3,7 @@
 	use App\Dto\OpinionDTO;
 	use App\Http\Controllers\Backend\OpinionController;
 
-/**
+	/**
 	 * @var OpinionDTO[] $opinions Отзывы
 	 *
 	 * @author Pak Sergey
