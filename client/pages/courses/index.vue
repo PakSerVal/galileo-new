@@ -79,7 +79,7 @@
 			}
 
 			&-title {
-				margin-bottom: 52px;
+				padding-bottom: 52px;
 			}
 
 			&-buttons {
