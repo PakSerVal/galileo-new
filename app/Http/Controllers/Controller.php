@@ -11,13 +11,9 @@ class Controller extends BaseController {
 	use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 	/**
-	 * Получение ссылки на экшен контроллера.
-	 *
-	 * @param string $action Экшен
+	 * @param string $action
 	 *
 	 * @return string
-	 *
-	 * @author Pak Sergey
 	 */
 	public static function getActionUrl(string $action): string {
 		return static::class . '@' . $action;

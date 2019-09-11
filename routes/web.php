@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Backend\ArticleController;
 use App\Http\Controllers\Backend\CourseController;
 use App\Http\Controllers\Backend\EnrollmentController;
 use App\Http\Controllers\Backend\ImageController;
@@ -18,10 +19,6 @@ use App\Http\Controllers\Backend\PhotoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
-});
 
 Route::get('/t-login', LoginController::getActionUrl(LoginController::ACTION_LOGIN_FORM));
 Route::post('/t-login', LoginController::getActionUrl(LoginController::ACTION_LOGIN))->name('login');
@@ -52,7 +49,15 @@ Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 't-admin'], functio
 
 	Route::get('/images/get-all', ImageController::getActionUrl(ImageController::ACTION_GET_ALL))->name('images-get');
 	Route::post('/images/upload', ImageController::getActionUrl(ImageController::ACTION_UPLOAD))->name('image-upload');
+	Route::post('/images/ckeditor-upload', ImageController::getActionUrl(ImageController::ACTION_CKEDITOR_UPLOAD))->name('image-ckeditor-upload');
 
 	Route::get('/enrollments', EnrollmentController::getActionUrl(EnrollmentController::ACTION_INDEX))->name('enrollments-list');
 	Route::get('/enrollments/delete/{id}', EnrollmentController::getActionUrl(EnrollmentController::ACTION_DELETE))->name('delete-enrollment');
+
+	Route::get('/articles', ArticleController::getActionUrl(ArticleController::ACTION_INDEX))->name('backend-articles-list');
+	Route::get('/articles/create', ArticleController::getActionUrl(ArticleController::ACTION_CREATE_FORM))->name('create-article-form');
+	Route::post('/articles/create', ArticleController::getActionUrl(ArticleController::ACTION_CREATE))->name('create-article');
+	Route::get('/articles/edit/{id}', ArticleController::getActionUrl(ArticleController::ACTION_EDIT_FORM))->name('edit-article-form');
+	Route::post('/articles/edit', ArticleController::getActionUrl(ArticleController::ACTION_EDIT))->name('edit-article');
+	Route::get('/articles/delete/{id}', ArticleController::getActionUrl(ArticleController::ACTION_DELETE))->name('delete-article');
 });

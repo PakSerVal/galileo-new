@@ -9,7 +9,7 @@ namespace App\Http\Controllers\Frontend\Api\Responses;
  */
 interface ApiResponse {
 	/**
-	 * @param object $data
+	 * @param mixed $data
 	 *
 	 * @return mixed
 	 */

@@ -1,11 +1,7 @@
 <?php
 	/**
-	 * Инпут для изображений.
-	 *
 	 * @var bool   $isNeedSelectBtn
 	 * @var string $previewSrc
-	 *
-	 * @author Pak Sergey
 	 */
 
 	$isNeedSelectBtn = $isNeedSelectBtn ?? true;

@@ -4,8 +4,7 @@
 		<div class="courses__wrap">
 			<div class="courses__item" v-for="(course, i) in courses" :key="i">
 				<v-card v-on:click="() => onCourseSelect(course)">
-					<v-img :src="course.image" height="auto">
-					</v-img>
+					<v-img :src="course.image" height="auto"></v-img>
 
 					<v-card-title primary-title class="courses__item-title">
 						<div>

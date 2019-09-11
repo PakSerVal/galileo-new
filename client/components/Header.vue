@@ -8,6 +8,7 @@
 				<v-btn flat v-on:click="() => {this.$router.push({name: 'courses'})}">Наши курсы</v-btn>
 				<v-btn flat v-on:click="() => {this.$router.push({name: 'opinions'})}">Отзывы</v-btn>
 				<v-btn flat v-on:click="() => {this.$router.push({name: 'photo'})}">Фото</v-btn>
+<!--				<v-btn flat v-on:click="() => {this.$router.push({name: 'articles'})}">Статьи</v-btn>-->
 			</v-toolbar-items>
 		</div>
 	</v-toolbar>

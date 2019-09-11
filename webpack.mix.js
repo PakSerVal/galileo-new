@@ -14,22 +14,35 @@ const fs   = require('fs');
  */
 
 
-// -- Frontend
-mix.js('resources/js/app.js', 'public/js').extract()
-	.sass('resources/sass/app.scss', 'public/css')
-	.extract()
-;
-
-
-if (mix.inProduction()) {
-	mix.version();
-}
-// -- -- -- --
+// // -- Frontend
+// mix.js('resources/js/app.js', 'public/js').extract()
+// 	.sass('resources/sass/app.scss', 'public/css')
+// 	.extract()
+// ;
+//
+//
+// if (mix.inProduction()) {
+// 	mix.version();
+// }
+// // -- -- -- --
 
 // -- Backend
 // --scripts
 const files = path.join('resources/backend/js', '**/*.js');
-mix.babel(files, 'public/js/backend.js');
+
+mix.js(files, 'public/js/backend.js');
+
+mix.webpackConfig({
+	module: {
+		rules: [{
+			test: /\.js?$/,
+			use: [{
+				loader: 'babel-loader',
+				options: mix.config.babel()
+			}]
+		}]
+	}
+});
 // -- -- -- --
 
 // -- css

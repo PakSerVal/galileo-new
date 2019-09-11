@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Image;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 /**
@@ -17,12 +18,8 @@ class ImageController extends Controller {
 
 	const ACTION_GET_ALL = 'getAll';
 	const ACTION_UPLOAD  = 'upload';
+	const ACTION_CKEDITOR_UPLOAD  = 'ckeditorUpload';
 
-	/**
-	 * Список.
-	 *
-	 * @author Pak Sergey
-	 */
 	public function getAll() {
 		$images = Image::paginate(30);
 		$result = [];
@@ -36,31 +33,52 @@ class ImageController extends Controller {
 		return response()->json($result);
 	}
 
-	/**
-	 * Загрузка изображения.
-	 *
-	 * @param Request $request
-	 *
-	 * @author Pak Sergey
-	 */
 	public function upload(Request $request) {
 		$request->validate([
 			'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 		]);
 
-		$imageName = time() . '.' . $request->image->getClientOriginalExtension();
+		$image = $this->uploadImage($request->image);
 
-		$path = $request->image->store('public/img');
+		return new JsonResponse([
+			'id'  => $image->id,
+			'src' => Storage::url($image-path),
+		]);
+	}
+
+	public function ckeditorUpload(Request $request) {
+		$request->validate([
+			'upload' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+		]);
+
+		$image = $this->uploadImage($request->upload);
+
+		if (null === $image) {
+			return new JsonResponse([
+				'uploaded' => false,
+				'url'      => 'Не удалось загрузить изображение',
+			]);
+		}
+
+		return new JsonResponse([
+			'uploaded' => true,
+			'url'      => Storage::url($image->path),
+		]);
+	}
+
+	protected function uploadImage(UploadedFile $file): ?Image {
+		$imageName = time() . '.' . $file->getClientOriginalExtension();
+
+		$path = $file->store('public/img');
 
 		$image = new Image();
 		$image->name = $imageName;
 		$image->path = $path;
 
-		$image->save();
+		if (false === $image->save()) {
+			return null;
+		}
 
-		return new JsonResponse([
-			'id'  => $image->id,
-			'src' => Storage::url($path),
-		]);
+		return $image;
 	}
 }

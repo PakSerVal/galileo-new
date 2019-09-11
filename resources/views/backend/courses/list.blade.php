@@ -2,10 +2,8 @@
 	use App\Dto\CourseDTO;
 	use App\Http\Controllers\Backend\CourseController;
 
-/**
-	 * @var CourseDTO[] $courses Курсы
-	 *
-	 * @author Pak Sergey
+	/**
+	 * @var CourseDTO[] $courses
 	 */
 ?>
 @extends('layouts.backend')
