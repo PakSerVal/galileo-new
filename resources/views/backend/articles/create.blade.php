@@ -10,7 +10,7 @@ use App\Models\Article;
 @extends('layouts.ckeditor')
 
 @section('content')
-	<?= Form::model($article, ['url' => route('create-article'), 'class' => 'form-group']) ?>
+	<?= Form::model($article, ['url' => route('create-article', [], false), 'class' => 'form-group']) ?>
 		<?= Form::label($article::ATTR_TITLE, 'Заголовок') ?>
 		<?= Form::text($article::ATTR_TITLE, '', ['class' => 'form-control']) ?>
 
