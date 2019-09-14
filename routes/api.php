@@ -24,4 +24,5 @@ Route::get('/get-photo', PhotoController::getActionUrl(PhotoController::ACTION_G
 Route::post('/send-enroll-form', EnrollController::getActionUrl(EnrollController::ACTION_ENROLL));
 Route::post('/save-opinion', OpinionController::getActionUrl(OpinionController::ACTION_SAVE_OPINION));
 Route::get('/get-latest-articles', ArticleController::getActionUrl(ArticleController::ACTION_GET_LATEST_ARTICLES));
+Route::get('/get-top-articles', ArticleController::getActionUrl(ArticleController::ACTION_GET_TOP_ARTICLES));
 Route::get('/get-article/{id}', ArticleController::getActionUrl(ArticleController::ACTION_GET_ARTICLE));

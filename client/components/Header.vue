@@ -48,6 +48,9 @@
 
 		@media (max-width: 767px) {
 			padding-bottom: 10px;
+			justify-content: center;
+			height: 100%;
+			flex-wrap: wrap;
 		}
 
 		button {

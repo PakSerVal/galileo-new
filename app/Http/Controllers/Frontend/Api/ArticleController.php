@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 
 class ArticleController extends ApiController {
 	const ACTION_GET_LATEST_ARTICLES = 'getLatestArticles';
+	const ACTION_GET_TOP_ARTICLES    = 'getTopArticles';
 	const ACTION_GET_ARTICLE         = 'getArticle';
 
 	/** @var ArticleRepository */
@@ -32,6 +33,16 @@ class ArticleController extends ApiController {
 	 */
 	public function getLatestArticles() {
 		$articles = $this->articles->getLatest();
+		$response = $this->converter->convert($articles, GetArticlesResponse::class);
+
+		return $this->respond($response);
+	}
+
+	/**
+	 * Get top articles action.
+	 */
+	public function getTopArticles() {
+		$articles = $this->articles->getTop();
 		$response = $this->converter->convert($articles, GetArticlesResponse::class);
 
 		return $this->respond($response);

@@ -10,6 +10,7 @@ export const Url = {
 
 	sendOpinion: '/api/save-opinion',
 
-	getArticles: '/api/get-latest-articles',
-	getArticle: '/api/get-article/',
+	getLatestArticles: '/api/get-latest-articles',
+	getTopArticles: '/api/get-top-articles',
+	getArticle:        '/api/get-article/',
 };

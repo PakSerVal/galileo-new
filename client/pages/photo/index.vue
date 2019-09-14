@@ -1,21 +1,39 @@
-<template>
-	<div class="photo">
+<template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
+	<v-layout>
 		<gallery :images="photo" :index="imageIndex" @close="imageIndex = null"></gallery>
-		<div class="image" v-for="(image, i) in photo" :key="i">
-			<img :src="image" alt="photo" @click="imageIndex = i">
-		</div>
-	</div>
+		<v-flex xs12 sm10 offset-sm1>
+			<v-card>
+				<v-container grid-list-sm fluid>
+					<v-layout row wrap>
+						<v-flex v-for="(image, i) in photo" :key="i" xs4 d-flex>
+							<v-card flat tile class="d-flex">
+								<v-img
+									:src="image"
+									:lazy-src="image"
+									aspect-ratio="1"
+									class="grey lighten-2"
+									@click="imageIndex = i"
+								>
+									<template v-slot:placeholder>
+										<v-layout fill-height align-center justify-center ma-0>
+											<v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+										</v-layout>
+									</template>
+								</v-img>
+							</v-card>
+						</v-flex>
+					</v-layout>
+				</v-container>
+			</v-card>
+		</v-flex>
+	</v-layout>
 </template>
 
 <script>
-	import VueGallery from 'vue-gallery';
 	import {GET_PHOTO} from "../../common/actions-enum";
 
 	export default {
 		name: "Photo",
-		components: {
-			gallery: VueGallery,
-		},
 		data() {
 			return {
 				photo: [],
@@ -33,17 +51,4 @@
 </script>
 
 <style lang="scss" scoped>
-	.photo {
-		display: flex;
-		flex-wrap: wrap;
-		padding: 20px;
-	}
-
-	.image {
-		width: 33%;
-
-		img {
-			width: 100%;
-		}
-	}
 </style>

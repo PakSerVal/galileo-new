@@ -39,6 +39,7 @@ module.exports = {
 	},
 	plugins: [
 		'@plugins/vuetify',
+		{ src: '@plugins/vue-gallery.js', ssr: false }
 	],
 	modules: [
 		[

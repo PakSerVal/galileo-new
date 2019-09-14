@@ -7,5 +7,6 @@ export const SET_PHOTO = 'set-photo';
 
 export const SET_ENROLL_FORM_SENT = 'set-enroll-form-sent';
 
-export const SET_ARTICLES = 'set-articles';
-export const SET_ARTICLE  = 'set-article';
+export const SET_LATEST_ARTICLES = 'set-latest-articles';
+export const SET_TOP_ARTICLES    = 'set-top-articles';
+export const SET_ARTICLE         = 'set-article';

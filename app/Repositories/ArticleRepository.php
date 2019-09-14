@@ -38,8 +38,36 @@ class ArticleRepository {
 		$result = [];
 		$dbArticles = Article
 			::where(Article::ATTR_IS_PUBLISHED, true)
-			->orderBy(Article::ATTR_PRIORITY, 'desc')
 			->orderBy(Article::ATTR_CREATED_AT, 'desc')
+			->get()
+		; /** @var Article[] $dbArticles */
+
+		foreach ($dbArticles as $dbArticle) {
+			$article              = new ArticleDTO();
+			$article->id          = $dbArticle->id;
+			$article->title       = $dbArticle->title;
+			$article->content     = $dbArticle->content;
+			$article->isPublished = $dbArticle->is_published;
+			$article->thumbImage  = $dbArticle->thumbImage()->getUrl();
+			$article->previewText = $dbArticle->preview_text;
+			$article->priority    = $dbArticle->priority;
+			$article->updatedAt   = $dbArticle->updated_at;
+			$article->createdAt   = $dbArticle->created_at;
+
+			$result[] = $article;
+		}
+
+		return $result;
+	}
+
+	/**
+	 * @return ArticleDTO[]
+	 */
+	public function getTop(): array {
+		$result = [];
+		$dbArticles = Article
+			::where(Article::ATTR_IS_PUBLISHED, true)
+			->orderBy(Article::ATTR_PRIORITY, 'desc')
 			->get()
 		; /** @var Article[] $dbArticles */
 

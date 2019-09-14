@@ -26,8 +26,12 @@ export const ApiService = {
 		return axios.post(Url.sendOpinion, {name, content});
 	},
 
-	getArticles() {
-		return axios.get(Url.getArticles);
+	getLatestArticles() {
+		return axios.get(Url.getLatestArticles);
+	},
+
+	getTopArticles() {
+		return axios.get(Url.getTopArticles);
 	},
 
 	getArticle(id) {

@@ -34,19 +34,19 @@
 </template>
 
 <script>
-	import {GET_ARTICLES} from "../../common/actions-enum";
+	import {GET_LATEST_ARTICLES} from "../../common/actions-enum";
 
 	export default {
-		name: "Opinions",
+		name: "Articles",
 		data() {
 			return {
 				articles: [],
 			};
 		},
 		mounted() {
-			this.$store.dispatch('articles/' + GET_ARTICLES)
+			this.$store.dispatch('articles/' + GET_LATEST_ARTICLES)
 				.then(() => {
-					this.articles = this.$store.getters['articles/articles'];
+					this.articles = this.$store.getters['articles/latestArticles'];
 				})
 			;
 		},
