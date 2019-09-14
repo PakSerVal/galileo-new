@@ -1,10 +1,7 @@
 <template>
 	<v-layout justify-center>
 		<v-flex xs12 sm10>
-				<v-container
-					fluid
-					grid-list-md
-				>
+				<v-container fluid grid-list-md>
 					<v-layout row wrap>
 						<v-flex v-for="article in articles" :key="article.title" sm4 xs12>
 							<v-card class="article" v-on:click="() => onArticleSelect(article.id)">
