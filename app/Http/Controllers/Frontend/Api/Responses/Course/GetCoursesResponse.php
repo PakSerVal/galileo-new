@@ -16,16 +16,17 @@ class GetCoursesResponse implements ApiResponse {
 	/**
 	 * @inheritDoc
 	 *
-	 * @param CourseDTO[] $opinions
+	 * @param CourseDTO[] $courses
 	 *
 	 * @author Pak Sergey
 	 */
-	public function convert($opinions): array {
+	public function convert($courses): array {
 		$result = [];
-		foreach ($opinions as $course) {
+		foreach ($courses as $course) {
 			$result[] = [
 				Course::ATTR_ID          => $course->id,
 				Course::ATTR_TITLE       => $course->title,
+				Course::ATTR_SLUG        => $course->slug,
 				Course::ATTR_DESCRIPTION => $course->description,
 				'image'                  => $course->imagePath,
 			];

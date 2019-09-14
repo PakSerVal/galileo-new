@@ -46,7 +46,7 @@
 		},
 		methods: {
 			onCourseSelect: function(course) {
-				this.$router.push({path: '/courses/' + course.id})
+				this.$router.push({path: '/courses/' + course.slug})
 			},
 		},
 	}

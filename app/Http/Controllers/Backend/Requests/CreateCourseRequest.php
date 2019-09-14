@@ -8,6 +8,8 @@ use Illuminate\Foundation\Http\FormRequest;
  * Запрос на создание курса.
  *
  * @property-read $title
+ * @property-read $slug
+ * @property-read $order
  * @property-read $description
  * @property-read $view_path
  * @property-read $image_id
@@ -16,6 +18,8 @@ use Illuminate\Foundation\Http\FormRequest;
  */
 class CreateCourseRequest extends FormRequest {
 	const ATTR_TITLE       = 'title';
+	const ATTR_SLUG        = 'slug';
+	const ATTR_ORDER       = 'order';
 	const ATTR_DESCRIPTION = 'description';
 	const ATTR_VIEW_PATH   = 'view_path';
 	const ATTR_IMAGE_ID    = 'image_id';
@@ -35,6 +39,8 @@ class CreateCourseRequest extends FormRequest {
 	public function rules() {
 		return [
 			static::ATTR_TITLE       => 'required|string',
+			static::ATTR_SLUG        => 'required|string',
+			static::ATTR_ORDER       => 'required|int',
 			static::ATTR_DESCRIPTION => 'required|string',
 			static::ATTR_VIEW_PATH   => 'required|string',
 			static::ATTR_IMAGE_ID    => 'required|int',

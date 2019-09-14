@@ -9,7 +9,7 @@ use App\Repositories\CourseRepository;
 use Illuminate\Http\JsonResponse;
 
 /**
- * Контроллер курсов .
+ * Контроллер курсов.
  *
  * @author Pak Sergey
  */
@@ -51,14 +51,14 @@ class CourseController extends ApiController {
 	/**
 	 * Получение курса.
 	 *
-	 * @param int $id
+	 * @param string $slug
 	 *
 	 * @return JsonResponse
 	 *
 	 * @author Pak Sergey
 	 */
-	public function getCourse(int $id) {
-		$response = $this->converter->convert($this->courses->getOne($id), GetCourseResponse::class);
+	public function getCourse(string $slug) {
+		$response = $this->converter->convert($this->courses->getBySlug($slug), GetCourseResponse::class);
 
 		return $this->respond($response);
 	}

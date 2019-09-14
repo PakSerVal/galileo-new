@@ -24,7 +24,7 @@ class CourseController extends Controller {
 	const ACTION_UPDATE           = 'update';
 	const ACTION_DELETE           = 'delete';
 
-	const VIEWS_PATH              = [
+	const VIEWS_PATH = [
 		'courses/ege'     => 'егэ',
 		'courses/english' => 'английский',
 		'courses/korean'  => 'корейсккий',
@@ -98,6 +98,8 @@ class CourseController extends Controller {
 	public function create(CreateCourseRequest $request) {
 		$course              = new Course();
 		$course->title       = $request->title;
+		$course->slug        = $request->slug;
+		$course->order       = $request->order;
 		$course->description = $request->description;
 		$course->view_path   = $request->view_path;
 		$course->image_id    = $request->image_id;
@@ -126,6 +128,8 @@ class CourseController extends Controller {
 		}
 
 		$course->title       = $request->title;
+		$course->slug        = $request->slug;
+		$course->order       = $request->order;
 		$course->description = $request->description;
 		$course->view_path   = $request->view_path;
 
