@@ -13,20 +13,26 @@ use App\Models\Article;
 	<?= Form::model($article, ['url' => route('create-article', [], false), 'class' => 'form-group']) ?>
 		<?= Form::label($article::ATTR_TITLE, 'Заголовок') ?>
 		<?= Form::text($article::ATTR_TITLE, '', ['class' => 'form-control']) ?>
+		<br>
 
 		<?= Form::label($article::ATTR_CONTENT, 'Контент') ?>
 		<?= Form::textarea($article::ATTR_CONTENT, '', ['id' => 'ckeditor', 'class' => 'form-control']) ?>
+		<br>
 
 		<?= Form::label($article::ATTR_PREVIEW_TEXT, 'Текст для превью') ?>
 		<?= Form::textarea($article::ATTR_PREVIEW_TEXT, '', ['class' => 'form-control', 'rows' => 3]) ?>
+		<br>
 
 		<?= Form::label($article::ATTR_IS_PUBLISHED, 'Опубликован') ?>
 		<?= Form::checkbox($article::ATTR_IS_PUBLISHED) ?>
+		<br>
 
 		<?= Form::label($article::ATTR_PRIORITY, 'Приоритет') ?>
 		<?= Form::text($article::ATTR_PRIORITY, 0, ['class' => 'form-control']) ?>
+		<br>
 
 		@include('widgets.image-input')
+		<br>
 
 		<?= Form::submit('Опубликовать', ['class' => 'btn btn-primary']) ?>
 	<?= Form::close() ?>
