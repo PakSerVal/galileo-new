@@ -1,6 +1,8 @@
 <template xmlns:v-slot="http://www.w3.org/1999/XSL/Transform">
 	<v-layout>
-		<gallery :images="photo" :index="imageIndex" @close="imageIndex = null"></gallery>
+		<client-only>
+			<gallery :images="photo" :index="imageIndex" @close="imageIndex = null"></gallery>
+		</client-only>
 		<v-flex xs12 sm10 offset-sm1>
 			<v-card>
 				<v-container grid-list-sm fluid>
