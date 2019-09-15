@@ -18,7 +18,7 @@
 			};
 		},
 		mounted() {
-			this.$store.dispatch('courses/' + GET_COURSE, this.$route.params.id)
+			this.$store.dispatch('courses/' + GET_COURSE, this.$route.params.slug)
 			.then(() => {
 				this.course = this.$store.getters['courses/selectedCourse'];
 			})
