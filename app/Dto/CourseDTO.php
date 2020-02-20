@@ -12,6 +12,7 @@ namespace App\Dto;
 class CourseDTO {
 	public $id;
 	public $title;
+	public $slug;
 	public $description;
 	public $viewPath;
 	public $imagePath;

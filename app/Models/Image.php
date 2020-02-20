@@ -6,15 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Storage;
 
 /**
- * Модель изображение.
- *
  * @property int    $id
  * @property string $path
  * @property string $name
  * @property string $created_at
  * @property string $updated_at
- *
- * @author Pak Sergey
  */
 class Image extends Model {
 	const ATTR_ID         = 'id';

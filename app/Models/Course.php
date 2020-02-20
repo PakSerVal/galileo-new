@@ -9,6 +9,8 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property int    $id
  * @property string $title
+ * @property string $slug
+ * @property string $order
  * @property string $description
  * @property string $view_path
  * @property int    $image_id
@@ -22,6 +24,8 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model {
 	const ATTR_ID          = 'id';
 	const ATTR_TITLE       = 'title';
+	const ATTR_SLUG        = 'slug';
+	const ATTR_ORDER       = 'order';
 	const ATTR_DESCRIPTION = 'description';
 	const ATTR_VIEW_PATH   = 'view_path';
 	const IMAGE_ID         = 'image_id';

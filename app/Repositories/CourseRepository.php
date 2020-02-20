@@ -22,14 +22,14 @@ class CourseRepository {
 	 * @author Pak Sergey
 	 */
 	public function getAll(): array {
-		//todo-13.07.19-pak.s Обернуть в кэш
 		$result    = [];
-		$dbCourses = Course::all();
+		$dbCourses = Course::orderBy(Course::ATTR_ORDER)->get(); /** @var Course[] $dbCourses */
 
 		foreach ($dbCourses as $dbCourse) {
 			$course              = new CourseDTO();
 			$course->id          = $dbCourse->id;
 			$course->title       = $dbCourse->title;
+			$course->slug        = $dbCourse->slug;
 			$course->description = $dbCourse->description;
 			$course->viewPath    = $dbCourse->view_path;
 			$course->imagePath   = $dbCourse->image->getUrl();
@@ -57,6 +57,28 @@ class CourseRepository {
 		$course              = new CourseDTO();
 		$course->id          = $dbCourse->id;
 		$course->title       = $dbCourse->title;
+		$course->slug        = $dbCourse->slug;
+		$course->description = $dbCourse->description;
+		$course->viewPath    = $dbCourse->view_path;
+		$course->imagePath   = $dbCourse->image->getUrl();
+		$course->createdAt   = $dbCourse->created_at;
+		$course->updatedAt   = $dbCourse->updated_at;
+
+		return $course;
+	}
+
+	/**
+	 * @param string $slug
+	 *
+	 * @return CourseDTO
+	 */
+	public function getBySlug(string $slug): ?CourseDTO {
+		$dbCourse = Course::where(Course::ATTR_SLUG, $slug)->first(); /** @var Course $dbCourse */
+
+		$course              = new CourseDTO();
+		$course->id          = $dbCourse->id;
+		$course->title       = $dbCourse->title;
+		$course->slug        = $dbCourse->slug;
 		$course->description = $dbCourse->description;
 		$course->viewPath    = $dbCourse->view_path;
 		$course->imagePath   = $dbCourse->image->getUrl();

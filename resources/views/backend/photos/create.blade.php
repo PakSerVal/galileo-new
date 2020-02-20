@@ -17,8 +17,8 @@ use App\Models\Photo;
 		<?= Form::label($photo::ATTR_TITLE, 'Название') ?>
 		<?= Form::text($photo::ATTR_TITLE, '', ['class' => 'form-control']) ?>
 
-		@include('widgets.image-input');
+		@include('widgets.image-input')
 
-		<?= Form::submit('Создать', ['class' => 'btn btn-submit']) ?>
+		<?= Form::submit('Создать', ['class' => 'btn btn-primary']) ?>
 	<?= Form::close() ?>
 @endsection

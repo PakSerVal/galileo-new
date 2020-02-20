@@ -22,7 +22,6 @@ use App\Models\Opinion;
 
 		<?= Form::label($opinion::ATTR_IS_PUBLISHED, 'Опубликован') ?>
 		<?= Form::checkbox($opinion::ATTR_IS_PUBLISHED) ?>
-
 	<br>
 
 		<?= Form::submit('Создать', ['class' => 'btn btn-primary']) ?>
