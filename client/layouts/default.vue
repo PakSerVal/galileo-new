@@ -57,7 +57,7 @@
 			<v-layout row wrap align-center>
 				<v-flex xs12>
 					<div class="white--text ml-3">
-						© «Галилео» 2016-2019. г.Артём ул.Лазо 11
+						© «Галилео» 2016-2020. г.Артём ул.Лазо 11
 					</div>
 				</v-flex>
 			</v-layout>
