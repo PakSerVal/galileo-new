@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\Auth\LoginController;
 ?>
-@extends('layouts.app')
+@extends('layouts.backend')
 
 @section('content')
 	<div class="container">

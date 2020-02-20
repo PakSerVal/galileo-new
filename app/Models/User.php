@@ -15,7 +15,7 @@ class User extends Authenticatable {
 	 * @author Pak Sergey
 	 */
 	public function isAdmin() {
-		return $this->email === 'galileo-center@gmail.com';
+		return $this->email === 'admin@mail.ru';
 	}
 
 	/**

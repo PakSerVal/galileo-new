@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller {
 	const ACTION_LOGIN      = 'login';
-	const ACTION_LOGOUT     = 'logout';
 	const ACTION_LOGIN_FORM = 'showLoginForm';
 
 	/*

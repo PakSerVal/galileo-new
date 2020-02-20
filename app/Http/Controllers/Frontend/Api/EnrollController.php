@@ -9,7 +9,7 @@ class EnrollController extends ApiController {
 	const ACTION_ENROLL = 'enroll';
 
 	public function enroll(EnrollRequest $request) {
-		$enrollment = new Enrollment();
+		$enrollment        = new Enrollment();
 		$enrollment->name  = $request->name;
 		$enrollment->phone = $request->phone;
 

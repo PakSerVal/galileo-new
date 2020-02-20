@@ -30,7 +30,7 @@ const fs   = require('fs');
 // --scripts
 const files = path.join('resources/backend/js', '**/*.js');
 
-mix.js(files, 'public/js/backend.js');
+mix.js(files, 'public/js/app.js');
 
 mix.webpackConfig({
 	module: {
@@ -46,6 +46,6 @@ mix.webpackConfig({
 // -- -- -- --
 
 // -- css
-mix.sass('resources/backend/sass/backend.scss', 'public/css/backend.css');
+mix.sass('resources/backend/sass/backend.scss', 'public/css/app.css');
 // -- -- -- --
 // -- -- -- --

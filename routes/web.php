@@ -26,13 +26,6 @@ Route::post('/t-login', LoginController::getActionUrl(LoginController::ACTION_LO
 Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 't-admin'], function () {
 	Route::get('/', MenuController::getActionUrl(MenuController::ACTION_INDEX))->name('admin-menu');
 
-	Route::get('/courses', CourseController::getActionUrl(CourseController::ACTION_INDEX))->name('courses-list');
-	Route::get('/courses/create', CourseController::getActionUrl(CourseController::ACTION_SHOW_CREATE_FORM));
-	Route::get('/courses/edit/{id}', CourseController::getActionUrl(CourseController::ACTION_SHOW_EDIT_FORM))->name('edit-course');
-	Route::post('/courses/create', CourseController::getActionUrl(CourseController::ACTION_CREATE));
-	Route::post('/courses/update', CourseController::getActionUrl(CourseController::ACTION_UPDATE));
-	Route::get('/courses/delete/{id}', CourseController::getActionUrl(CourseController::ACTION_DELETE))->name('delete-course');
-
 	Route::get('/opinions', OpinionController::getActionUrl(OpinionController::ACTION_INDEX))->name('opinions-list');
 	Route::get('/opinions/create', OpinionController::getActionUrl(OpinionController::ACTION_SHOW_CREATE_FORM));
 	Route::get('/opinions/edit/{id}', OpinionController::getActionUrl(OpinionController::ACTION_SHOW_EDIT_FORM))->name('edit-opinion');

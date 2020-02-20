@@ -2,14 +2,6 @@ import axios from 'axios';
 import {Url} from "./url-enums";
 
 export const ApiService = {
-	getCourses() {
-		return axios.get(Url.getCourses);
-	},
-
-	getCourse(id) {
-		return axios.get(Url.getCourse + id);
-	},
-
 	getOpinions() {
 		return axios.get(Url.getOpinions);
 	},
