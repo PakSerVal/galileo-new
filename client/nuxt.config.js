@@ -7,7 +7,8 @@ module.exports = {
 		meta:  [
 			{charset: 'utf-8'},
 			{name: 'viewport', content: 'width=device-width, initial-scale=1'},
-			{hid: 'description', name: 'description', content: 'Подготовка к ЕГЭ (11 кл.) и ОГЭ (9 кл.) по всем предметам школьной программы (математика, физика, русский язык, литература, история, обществознание)'}
+			{hid: 'description', name: 'description', content: 'Подготовка к ЕГЭ (11 кл.) и ОГЭ (9 кл.) по всем предметам школьной программы (математика, физика, русский язык, литература, история, обществознание)'},
+			{name: 'keywords', content: 'Учебный центр Галилео город Артём, ЕГЭ и ОГЭ в Артёме, Английский язык, Корейский язык'}
 		],
 		link:  [
 			{rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},

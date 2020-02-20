@@ -145,6 +145,16 @@
   import EnrollButton from "../../../components/EnrollButton";
 
   export default {
+    head: {
+      title: 'Подготовка к ЕГЭ и ОГЭ г. Артём Учебный центр Галилео',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Подготовка к ЕГЭ (11 кл.) и ОГЭ (9 кл.) по всем предметам школьной программы (математика, физика, русский язык, литература, история, обществознание)'
+        }
+      ],
+    },
     name:       "Course",
     components: {EnrollButton},
   }
