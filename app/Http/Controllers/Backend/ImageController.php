@@ -42,7 +42,7 @@ class ImageController extends Controller {
 
 		return new JsonResponse([
 			'id'  => $image->id,
-			'src' => Storage::url($image-path),
+			'src' => Storage::url($image->path),
 		]);
 	}
 
