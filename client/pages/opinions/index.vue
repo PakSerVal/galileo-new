@@ -61,7 +61,7 @@
       padding:       15px;
       font-size:     20px;
       font-weight:   bold;
-      max-width:     600px;
+      max-width:     800px;
 
       &_position_right {
         margin-left: auto;
