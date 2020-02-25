@@ -1,3 +1,5 @@
 User-agent: *
 Disallow: /t-admin
 Disallow: /t-login
+
+Sitemap: https://galileo-ege.ru/sitemap_location.xml
