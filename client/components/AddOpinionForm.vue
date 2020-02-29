@@ -71,10 +71,16 @@
 </script>
 
 <style lang="scss" scoped>
+  @import '~assets/scss/mixins';
+
   .add-opinion-form {
     width:       60%;
     margin:      auto;
     padding-top: 40px;
+
+    @include respond-to(phone) {
+      width: 100%;
+    }
 
     &__form {
       background-color:   #FFF;
